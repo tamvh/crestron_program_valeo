@@ -1,0 +1,503 @@
+#CATEGORY "46" "Conversion"
+#DEFAULT_VOLATILE
+#ENABLE_STACK_CHECKING
+#ENABLE_TRACE
+#USER_SIMPLSHARP_LIBRARY "common_lib"
+
+DIGITAL_OUTPUT digital_out1;
+DIGITAL_OUTPUT digital_out2;
+DIGITAL_OUTPUT digital_out3;
+DIGITAL_OUTPUT digital_out4;
+DIGITAL_OUTPUT digital_out5;
+DIGITAL_OUTPUT digital_out6;
+DIGITAL_OUTPUT digital_out7;
+DIGITAL_OUTPUT digital_out8;
+DIGITAL_OUTPUT digital_out9;
+DIGITAL_OUTPUT digital_out10;
+DIGITAL_OUTPUT digital_out11;
+DIGITAL_OUTPUT digital_out12;
+DIGITAL_OUTPUT digital_out13;
+DIGITAL_OUTPUT digital_out14;
+DIGITAL_OUTPUT digital_out15;
+DIGITAL_OUTPUT digital_out16;
+DIGITAL_OUTPUT digital_out17;
+DIGITAL_OUTPUT digital_out18;
+DIGITAL_OUTPUT digital_out19;
+DIGITAL_OUTPUT digital_out20;
+
+ANALOG_OUTPUT analog_out1;
+ANALOG_OUTPUT analog_out2;
+ANALOG_OUTPUT analog_out3;
+ANALOG_OUTPUT analog_out4;
+ANALOG_OUTPUT analog_out5;
+ANALOG_OUTPUT analog_out6;
+ANALOG_OUTPUT analog_out7;
+ANALOG_OUTPUT analog_out8;
+ANALOG_OUTPUT analog_out9;
+ANALOG_OUTPUT analog_out10;
+ANALOG_OUTPUT analog_out11;
+ANALOG_OUTPUT analog_out12;
+ANALOG_OUTPUT analog_out13;
+ANALOG_OUTPUT analog_out14;
+ANALOG_OUTPUT analog_out15;
+ANALOG_OUTPUT analog_out16;
+ANALOG_OUTPUT analog_out17;
+ANALOG_OUTPUT analog_out18;
+ANALOG_OUTPUT analog_out19;
+ANALOG_OUTPUT analog_out20;
+
+DIGITAL_INPUT d_in1_on;
+DIGITAL_INPUT d_in1_off;
+DIGITAL_INPUT d_in2_on;
+DIGITAL_INPUT d_in2_off;
+DIGITAL_INPUT d_in3_on;
+DIGITAL_INPUT d_in3_off;
+DIGITAL_INPUT d_in4_on;
+DIGITAL_INPUT d_in4_off;
+DIGITAL_INPUT d_in5_on;
+DIGITAL_INPUT d_in5_off;
+DIGITAL_INPUT d_in6_on;
+DIGITAL_INPUT d_in6_off;
+DIGITAL_INPUT d_in7_on;
+DIGITAL_INPUT d_in7_off;
+DIGITAL_INPUT d_in8_on;
+DIGITAL_INPUT d_in8_off;
+DIGITAL_INPUT d_in9_on;
+DIGITAL_INPUT d_in9_off;
+DIGITAL_INPUT d_in10_on;
+DIGITAL_INPUT d_in10_off;
+DIGITAL_INPUT d_in11_on;
+DIGITAL_INPUT d_in11_off;
+DIGITAL_INPUT d_in12_on;
+DIGITAL_INPUT d_in12_off;
+DIGITAL_INPUT d_in13_on;
+DIGITAL_INPUT d_in13_off;
+DIGITAL_INPUT d_in14_on;
+DIGITAL_INPUT d_in14_off;
+DIGITAL_INPUT d_in15_on;
+DIGITAL_INPUT d_in15_off;
+DIGITAL_INPUT d_in16_on;
+DIGITAL_INPUT d_in16_off;
+DIGITAL_INPUT d_in17_on;
+DIGITAL_INPUT d_in17_off;
+DIGITAL_INPUT d_in18_on;
+DIGITAL_INPUT d_in18_off;
+DIGITAL_INPUT d_in19_on;
+DIGITAL_INPUT d_in19_off;
+DIGITAL_INPUT d_in20_on;
+DIGITAL_INPUT d_in20_off;
+                         
+INTEGER				time_pause;
+DIGITAL_OUTPUT 		send_command;
+LONG_INTEGER 		decimal_serial;
+STRING_INPUT 		hex_serial_input$[255];
+CEvent 				ping_pause;
+CEvent 				delay_onoff;
+WSClient 			ws;
+
+EVENTHANDLER _onPushReceived(PushEventArgs e)
+{
+	LONG_INTEGER 		device_type;
+	STRING 				cmd[20];
+	STRING 				device_id[20];
+	STRING 				value[20];
+    try
+	{
+		device_type = e.device_type;
+		cmd 		= e.cmd;
+		device_id 	= e.device_id;
+		value 		= e.value;
+		Print("device type: %ld\n", device_type);
+		Print("cmd:			%s\n", cmd);
+		Print("device_id: 	%s\n", device_id);
+		Print("value:		%s\n", value);
+	    time_pause = 50;
+		if(device_type = 1) 
+		{
+			//DEN ONOFF
+			if(device_id = "1") {
+				digital_out1 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out1 = 0;	
+			}
+			if(device_id = "2") {
+				digital_out2 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out2 = 0;	
+			}
+			if(device_id = "3") {
+				digital_out3 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out3 = 0;	
+			}
+			if(device_id = "4") {
+				digital_out4 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out4 = 0;	
+			}
+			if(device_id = "5") {
+				digital_out5 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out5 = 0;	
+			}
+			if(device_id = "6") {
+				digital_out6 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out6 = 0;	
+			}
+			if(device_id = "7") {
+				digital_out7 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out7 = 0;	
+			}
+			if(device_id = "8") {
+				digital_out8 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out8 = 0;	
+			}
+			if(device_id = "9") {
+				digital_out9 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out9 = 0;	
+			}
+			if(device_id = "10") {
+				digital_out10 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out10 = 0;	
+			}
+			if(device_id = "11") {
+				digital_out11 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out11 = 0;	
+			}
+			if(device_id = "12") {
+				digital_out12 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out12 = 0;	
+			}
+			if(device_id = "13") {
+				digital_out13 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out13 = 0;	
+			}
+			if(device_id = "14") {
+				digital_out14 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out14 = 0;	
+			}
+			if(device_id = "15") {
+				digital_out15 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out15 = 0;	
+			}
+			if(device_id = "16") {
+				digital_out16 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out16 = 0;	
+			}
+			if(device_id = "17") {
+				digital_out17 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out17 = 0;	
+			}
+            if(device_id = "18") {
+				digital_out18 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out18 = 0;	
+			}
+			if(device_id = "19") {
+				digital_out19 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out19 = 0;	
+			}
+			if(device_id = "20") {
+				digital_out20 = 1;
+				delay_onoff.wait(time_pause);
+				digital_out20 = 0;	
+			}
+		}
+	    
+		if(device_type = 2) {
+			//DEN DIM
+			if(device_id = "1") 
+			{
+				analog_out1 = 	atoi(value);
+			} 
+			if(device_id = "2") 
+			{
+				analog_out2 = 	atoi(value);
+			}
+			if(device_id = "3") 
+			{
+				analog_out3 = 	atoi(value);
+			}
+			if(device_id = "4") 
+			{
+				analog_out4 = 	atoi(value);
+			}
+			if(device_id = "5") 
+			{
+		       	analog_out5 = 	atoi(value);
+			}
+			if(device_id = "6") 
+			{
+		     	analog_out6 = 	atoi(value);
+			}
+			if(device_id = "7") 
+			{
+		        analog_out7 = 	atoi(value);
+			}
+			if(device_id = "8") 
+			{
+		       	analog_out8 = 	atoi(value);
+			}
+			if(device_id = "9") 
+			{
+		       	analog_out9 = 	atoi(value);
+			}
+			if(device_id = "10") 
+			{
+				analog_out10 = atoi(value);		
+			}
+			if(device_id = "11") 
+			{
+		       	analog_out11 = atoi(value);
+			}
+			if(device_id = "12") 
+			{
+		      	analog_out12 = atoi(value);
+			}
+			if(device_id = "13") 
+			{
+		       	analog_out13 = atoi(value);
+			}
+			if(device_id = "14") 
+			{
+		       	analog_out14 = atoi(value);
+			}
+			if(device_id = "15") 
+			{
+		      	analog_out15 = atoi(value);
+			}
+			if(device_id = "16") 
+			{
+		       	analog_out16 = atoi(value);
+			}
+			if(device_id = "17") 
+			{
+		       	analog_out17 = atoi(value);
+			}
+			if(device_id = "18") 
+			{
+		       	analog_out18 = atoi(value);
+			}
+			if(device_id = "19") 
+			{
+		       	analog_out19 = atoi(value);
+			}
+			if(device_id = "20") 
+			{
+		       	analog_out20 = atoi(value);
+			}				
+		}
+	} catch {
+        print("_onPushReceived exception\n");
+	}
+}
+
+RELEASE d_in1_on {
+	print("ON DEN 1: %d\n", d_in1_on);
+	ws.LightOnoff("1", 1, 100);
+}
+RELEASE d_in1_off {
+	print("OFF DEN 1: %d\n", d_in1_off);
+	ws.LightOnoff("1", 0, 0);
+}
+RELEASE d_in2_on {
+	print("ON DEN 2: %d\n", d_in2_on);
+	ws.LightOnoff("2", 1, 100);
+}
+RELEASE d_in2_off {
+	print("OFF DEN 1: %d\n", d_in2_off);
+	ws.LightOnoff("2", 0, 0);
+}
+RELEASE d_in3_on {
+	print("ON DEN 3: %d\n", d_in3_on);
+	ws.LightOnoff("3", 1, 100);
+}
+RELEASE d_in3_off {
+	print("OFF DEN 3: %d\n", d_in3_off);
+	ws.LightOnoff("3", 0, 0);
+}
+RELEASE d_in4_on {
+	print("ON DEN 4: %d\n", d_in4_on);
+	ws.LightOnoff("4", 1, 100);
+}
+RELEASE d_in4_off {
+	print("OFF DEN 4: %d\n", d_in4_off);
+	ws.LightOnoff("4", 0, 0);
+}
+RELEASE d_in5_on {
+	print("ON DEN 5: %d\n", d_in5_on);
+	ws.LightOnoff("5", 1, 100);
+}
+RELEASE d_in5_off {
+	print("OFF DEN 5: %d\n", d_in5_off);
+	ws.LightOnoff("5", 0, 0);
+}
+RELEASE d_in6_on {
+	print("ON DEN 6: %d\n", d_in6_on);
+	ws.LightOnoff("6", 1, 100);
+}
+RELEASE d_in6_off {
+	print("OFF DEN 6: %d\n", d_in6_off);
+	ws.LightOnoff("6", 0, 0);
+}
+RELEASE d_in7_on {
+	print("ON DEN 7: %d\n", d_in7_on);
+	ws.LightOnoff("7", 1, 100);
+}
+RELEASE d_in7_off {
+	print("OFF DEN 7: %d\n", d_in7_off);
+	ws.LightOnoff("7", 0, 0);
+}
+RELEASE d_in8_on {
+	print("ON DEN 8: %d\n", d_in8_on);
+	ws.LightOnoff("8", 1, 100);
+}
+RELEASE d_in8_off {
+	print("OFF DEN 8: %d\n", d_in8_off);
+	ws.LightOnoff("8", 0, 0);
+}
+RELEASE d_in9_on {
+	print("ON DEN 9: %d\n", d_in9_on);
+	ws.LightOnoff("9", 1, 100);
+}
+RELEASE d_in9_off {
+	print("OFF DEN 9: %d\n", d_in9_off);
+	ws.LightOnoff("9", 0, 0);
+}
+RELEASE d_in10_on {
+	print("ON DEN 10: %d\n", d_in10_on);
+	ws.LightOnoff("10", 1, 100);
+}
+RELEASE d_in10_off {
+	print("OFF DEN 10: %d\n", d_in10_off);
+	ws.LightOnoff("10", 0, 0);
+}
+RELEASE d_in11_on {
+	print("ON DEN 11: %d\n", d_in11_on);
+	ws.LightOnoff("11", 1, 100);
+}
+RELEASE d_in11_off {
+	print("OFF DEN 11: %d\n", d_in11_off);
+	ws.LightOnoff("11", 0, 0);
+}
+RELEASE d_in12_on {
+	print("ON DEN 12: %d\n", d_in12_on);
+	ws.LightOnoff("12", 1, 100);
+}
+RELEASE d_in12_off {
+	print("OFF DEN 12: %d\n", d_in12_off);
+	ws.LightOnoff("12", 0, 0);
+}
+RELEASE d_in13_on {
+	print("ON DEN 13: %d\n", d_in13_on);
+	ws.LightOnoff("13", 1, 100);
+}
+RELEASE d_in13_off {
+	print("OFF DEN 13: %d\n", d_in13_off);
+	ws.LightOnoff("13", 0, 0);
+}
+RELEASE d_in14_on {
+	print("ON DEN 14: %d\n", d_in14_on);
+	ws.LightOnoff("14", 1, 100);
+}
+RELEASE d_in14_off {
+	print("OFF DEN 14: %d\n", d_in14_off);
+	ws.LightOnoff("14", 0, 0);
+}
+RELEASE d_in15_on {
+	print("ON DEN 15: %d\n", d_in15_on);
+	ws.LightOnoff("15", 1, 100);
+}
+RELEASE d_in15_off {
+	print("OFF DEN 15: %d\n", d_in15_off);
+	ws.LightOnoff("15", 0, 0);
+}
+RELEASE d_in16_on {
+	print("ON DEN 16: %d\n", d_in16_on);
+	ws.LightOnoff("16", 1, 100);
+}
+RELEASE d_in16_off {
+	print("OFF DEN 16: %d\n", d_in16_off);
+	ws.LightOnoff("16", 0, 0);
+}
+RELEASE d_in17_on {
+	print("ON DEN 17: %d\n", d_in17_on);
+	ws.LightOnoff("17", 1, 100);
+}
+RELEASE d_in17_off {
+	print("OFF DEN 17: %d\n", d_in17_off);
+	ws.LightOnoff("17", 0, 0);
+}
+RELEASE d_in18_on {
+	print("ON DEN 18: %d\n", d_in18_on);
+	ws.LightOnoff("18", 1, 100);
+}
+RELEASE d_in18_off {
+	print("OFF DEN 18: %d\n", d_in18_off);
+	ws.LightOnoff("18", 0, 0);
+}
+RELEASE d_in19_on {
+	print("ON DEN 19: %d\n", d_in19_on);
+	ws.LightOnoff("19", 1, 100);
+}
+RELEASE d_in19_off {
+	print("OFF DEN 19: %d\n", d_in19_off);
+	ws.LightOnoff("19", 0, 0);
+}
+RELEASE d_in20_on {
+	print("ON DEN 20: %d\n", d_in20_on);
+	ws.LightOnoff("20", 1, 100);
+}
+RELEASE d_in20_off {
+	print("OFF DEN 20: %d\n", d_in20_off);
+	ws.LightOnoff("20", 0, 0);
+}
+   
+CHANGE hex_serial_input$
+{   try {
+        Trace("Serial Number Hex: %s",hex_serial_input$);	
+		decimal_serial = HexToL(hex_serial_input$);
+		Trace("Serial Number Integer: %d",decimal_serial);
+		ws.g_cunit_no = LTOA(decimal_serial);
+		ws.initialize_ws();
+		ws.connect();
+		ws.AsyncSendAndReceive();
+	} catch {
+    	print("Exception when get crestron serial number");
+	} 
+	
+}
+
+Function Main()
+{
+	send_command = 1;
+    WaitForInitializationComplete();
+	RegisterEvent(PushEvents, onPushReceived, _onPushReceived);		
+    ping_pause.wait(10000);		
+	while(1) {
+		ping_pause.wait(5000);
+		ws.ping();
+		print("ping count: %d\n", ws.ping_count);
+		if(ws.ping_count >= 2) {
+        	//reconnect
+			print("reconnect...\n");
+			ws.initialize_ws();
+			ws.try_to_connect();
+			ws.AsyncSendAndReceive();
+		}
+	}
+}
+

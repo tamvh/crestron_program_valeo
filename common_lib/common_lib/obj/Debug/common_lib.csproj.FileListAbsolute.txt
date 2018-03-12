@@ -1,0 +1,10 @@
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\bin\Debug\common_lib.dll
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\bin\Debug\common_lib.pdb
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\bin\Debug\SimplSharpCustomAttributesInterface.dll
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\bin\Debug\SimplSharpHelperInterface.dll
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\bin\Debug\SimplSharpNewtonsoft.dll
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\bin\Debug\SimplSharpSQLHelperInterface.dll
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\bin\Debug\SimplSharpReflectionInterface.dll
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\obj\Debug\common_lib.dll
+C:\Users\tamvh\Documents\crestron\project\crestron_program_valeo\common_lib\common_lib\obj\Debug\common_lib.pdb
